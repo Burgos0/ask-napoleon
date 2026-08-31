@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Napoleon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Ask Napoleon</h1>
+      <p class="subtitle">Ask me whatever you want. Gosh.</p>
+
+      <form id="chat-form">
+        <label for="message">Your question</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Type a question here..."
+          required
+        ></textarea>
+        <button id="send-button" type="submit">Send</button>
+      </form>
+
+      <p id="loading" class="loading" hidden>Thinking. This is taking forever.</p>
+      <section id="response" class="response" aria-live="polite" hidden></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

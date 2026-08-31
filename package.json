@@ -1,0 +1,13 @@
+{
+  "name": "ask-napoleon",
+  "version": "1.0.0",
+  "description": "A simple Groq-powered question app with an awkward deadpan voice.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0"
+  }
+}
