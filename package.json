@@ -1,10 +1,13 @@
 {
   "name": "ask-napoleon",
   "version": "1.0.0",
-  "description": "A simple Groq-powered question app with an awkward deadpan voice.",
+  "description": "A simple app that responds with a random Duke audio clip.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "prepare-audio": "node scripts/prepare-audio.js",
+    "classify-audio": "python scripts/classify-audio.py",
+    "refine-duke-audio": "python scripts/refine-duke-audio.py"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

@@ -3,6 +3,20 @@ const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send-button");
 const loading = document.getElementById("loading");
 const response = document.getElementById("response");
+const replayButton = document.getElementById("replay-button");
+let currentAudio;
+
+function playCurrentAudio() {
+  if (!currentAudio) {
+    return;
+  }
+
+  currentAudio.currentTime = 0;
+  currentAudio.play().catch(() => {
+    response.textContent = "Audio could not play. Try Replay.";
+    response.hidden = false;
+  });
+}
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -28,8 +42,12 @@ form.addEventListener("submit", async (event) => {
       throw new Error(data.error || "The answer did not work out.");
     }
 
-    response.textContent = data.reply;
+    currentAudio?.pause();
+    currentAudio = new Audio(data.audio);
+    response.textContent = "🔊 Duke responds...";
     response.hidden = false;
+    replayButton.hidden = false;
+    playCurrentAudio();
   } catch (error) {
     response.textContent = `Sorry, something went wrong. ${error.message}`;
     response.hidden = false;
@@ -38,6 +56,8 @@ form.addEventListener("submit", async (event) => {
     loading.hidden = true;
   }
 });
+
+replayButton.addEventListener("click", playCurrentAudio);
 
 messageInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && !event.shiftKey) {

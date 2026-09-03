@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ask Napoleon</title>
+    <title>Ask Duke</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="card">
-      <h1>Ask Napoleon</h1>
-      <p class="subtitle">Ask me whatever you want. Gosh.</p>
+      <h1>Ask Duke</h1>
+      <p class="subtitle">Ask anything.</p>
 
       <form id="chat-form">
         <label for="message">Your question</label>
@@ -23,8 +23,9 @@
         <button id="send-button" type="submit">Send</button>
       </form>
 
-      <p id="loading" class="loading" hidden>Thinking. This is taking forever.</p>
+      <p id="loading" class="loading" hidden>Finding a response...</p>
       <section id="response" class="response" aria-live="polite" hidden></section>
+      <button id="replay-button" type="button" hidden>Replay 🔊</button>
     </main>
 
     <script src="script.js"></script>
